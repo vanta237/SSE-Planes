@@ -2,4 +2,5 @@ py/*
 testing/*
 xml/*
 img/aircraft/*
+instructions.md
 test.html
