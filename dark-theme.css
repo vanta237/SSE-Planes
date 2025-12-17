@@ -99,6 +99,7 @@ aside,
 	}
 }
 
+/* --------------------------- */
 /* Vanta-Added */
 .smallcell {
 	font-size: 14px;
@@ -122,11 +123,6 @@ aside,
 
 /* Tooltip container */
 .tooltip {
-  /* position: relative;
-  display: inline-block;
-   */
-  /* Add dots under the hoverable text */
-  /* border-bottom: 1px dotted black; */
   cursor: pointer;
 }
 
