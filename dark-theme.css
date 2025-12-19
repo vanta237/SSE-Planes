@@ -101,6 +101,13 @@ aside,
 
 /* --------------------------- */
 /* Vanta-Added */
+.overcell{
+	width: 300px;
+	border: 1px solid rgba(255, 255, 255, .5);
+}
+.overrow{
+	border: 1px solid rgba(255, 255, 255, .5);
+}
 .smallcell {
 	font-size: 14px;
 }
