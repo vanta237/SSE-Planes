@@ -147,3 +147,29 @@ aside,
   visibility: visible;
   opacity: 1;
 }
+
+/* Flip cards */
+.card {
+	width: 220px;
+	height: 374px;
+	perspective: 1000px;
+	transition: transform .5s;
+	transform-style: preserve-3d;
+}
+
+.card.flipped {
+	transform: rotateY( 180deg );
+}
+
+.card-front, .card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.card-back {
+	transform: rotateY(180deg);
+	font-size:15px;
+	padding: 5px;
+}
