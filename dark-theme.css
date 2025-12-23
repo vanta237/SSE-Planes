@@ -180,3 +180,20 @@ aside,
 	font-size:15px;
 	padding: 5px;
 }
+
+/* Ord Colors */
+.strk{
+	background-color: #330000;
+}
+
+.ewo{
+	background-color: #333300;
+}
+
+.intr{
+	background-color: #00331A;
+}
+
+.mult{
+	background-color: #333333;
+}
