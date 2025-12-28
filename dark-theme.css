@@ -105,27 +105,21 @@ aside,
 	width: 300px;
 	border: 1px solid rgba(255, 255, 255, .5);
 }
+
 .overrow{
 	border: 1px solid rgba(255, 255, 255, .5);
 }
-.smallcell {
-	font-size: 14px;
+
+.innercell-bottom-left {
+	text-align:left;
+	padding: 0px 0px 5px 5px;
+	vertical-align:bottom;
 }
 
-.bigcell {
-	font-size: 16px;
-}
-
-.biggercell {
-	font-size: 21px;
-}
-
-.ordcell {
-	font-size: 12px;
-}
-
-.familyrow {
-	padding: 25px;
+.innercell-bottom-right {
+	text-align:right;
+	padding: 5px 5px 0px 0px;
+	vertical-align:bottom;
 }
 
 /* Tooltip container */
@@ -196,4 +190,49 @@ aside,
 
 .mult{
 	background-color: #333333;
+}
+
+/* Text size */
+.text21 {
+	font-size: 21px;
+}
+
+.text16 {
+	font-size: 16px;
+}
+
+.text14 {
+	font-size: 14px;
+}
+
+.text12 {
+	font-size: 12px;
+}
+
+/* Padding */
+.pad25 {
+	padding: 25px;
+}
+
+.pad10 {
+	padding: 10px;
+}
+
+.pad0 {
+	padding: 0px;
+}
+
+/* V-Align */
+.vtop {
+	vertical-align: top;
+}
+
+/* Text-Align */
+.tcenter {
+	text-align: center;
+}
+
+/* Text Color */
+.twhite {
+	color: white;
 }
