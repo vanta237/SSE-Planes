@@ -138,7 +138,11 @@ aside,
 
 /* Tooltip container */
 .tooltip {
-  cursor: pointer;
+  cursor:unset;
+}
+
+.planett{ 
+	cursor:pointer;
 }
 
 /* Tooltip text */
@@ -150,15 +154,36 @@ aside,
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
-  position: absolute;
+  position:absolute;
   opacity: 0;
   transition: opacity 1s;
   font-size: 18px;
   z-index: 1; /* Ensure tooltip is displayed above content */
 }
 
+.planettt {
+	visibility: hidden; /* Hidden by default */
+	width: 200px;
+	background-color: black;
+	color: #ffffff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	position:absolute;
+	inset-inline-start:10px;
+	opacity: 0;
+	transition: opacity 1s;
+	font-size: 18px;
+	z-index: 1; /* Ensure tooltip is displayed above content */
+}
+
 /* Show the tooltip text on hover */
 .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.planett:hover .planettt {
   visibility: visible;
   opacity: 1;
 }
@@ -189,7 +214,7 @@ aside,
 	padding: 5px;
 }
 
-/* Ord Colors */
+/* Background Colors */
 .strk{
 	background-color: #330000;
 }
@@ -228,6 +253,10 @@ aside,
 	padding: 25px;
 }
 
+.padt50 {
+	padding-top: 50px;
+}
+
 .pad10 {
 	padding: 10px;
 }
@@ -249,4 +278,23 @@ aside,
 /* Text Color */
 .twhite {
 	color: white;
+}
+
+/* Filtering */
+.plane, .family {
+	overflow: hidden;
+	display: none;
+}
+
+.show {
+	display: inline-flex;
+}
+
+.active{
+	background-color: #666;
+	color: white;
+}
+
+.family {
+	border: 1px black;
 }
