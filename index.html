@@ -37,10 +37,47 @@
             </ul>
             <h2>FILTERS</h2>
             <table id="filter-controls">
+                
+                <!-- Header -->
                 <tr>
                     <td>
+                        <button id="reset">RESET</button>
+                    </td>
+                    <td>
+                        <h3>Generation</h3>
+                    </td>
+                    <td>
+                        <h3>Tier</h3>
+                    </td>
+                    <td>
+                        <h3>🛡️Surv</h3>
+                    </td>
+                    <td>
+                        <h3>🔷Cost</h3>
+                    </td>
+                    <td>
+                        <h3>🚀A2A</h3>
+                    </td>
+                    <td>
+                        <h3>💣A2G</h3>
+                    </td>
+                    <td>
+                        <h3>🔀Manu</h3>
+                    </td>
+                    <td>
+                        <h3>⏩Speed</h3>
+                    </td>
+                    <td>
+                        <h3>📦Cap</h3>
+                    </td>
+                </tr>
+                
+                <!-- Upper row: Minimum or agnostic values -->
+                <tr>
+                    <td>
+                        <!-- add label -->
                         <label for="family-filter">Family</label>
-                        <select name="family-filter" id="family-filter" class="select active">
+                        <select type="hidden" name="family-filter" id="family-filter" class="select active">
                             <option value="All">All</option>
                             <option value="Cranes">Cranes</option>
                     <option value="Eagles">Eagles</option>
@@ -66,8 +103,307 @@
                     <option value="Wolfpacks">Wolfpacks</option>
                     
                         </select> 
+                        &nbsp;
+                    </td>
+                    <td>
+                        <label for="min-gen">Min</label>
+                        <select name="min-gen" id="min-gen" class="select">
+                            <option value="Any">Any</option>
+                            <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="min-tier" id="min-tier" class="select">
+                            <option value="Any">Any</option>
+                            <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="min-surv" id="min-surv" class="select">
+                            <option value="Any">Any</option>
+                            <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                       <select name="min-cost" id="min-cost" class="select">
+                            <option value="Any">Any</option>
+                            <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="33">33</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="min-a2a" id="min-a2a" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="min-a2g" id="min-a2g" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="min-manu" id="min-manu" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="min-speed" id="min-speed" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="min-cap" id="min-cap" class="select">
+                            <option value="Any">Any</option>
+                            <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    
+                        </select> 
                     </td>
                 </tr>
+                
+                <!-- Lower row: Maximum values -->
+                <tr>
+                    <td style="display: hidden;">
+                        <label for="role-filter">Role</label>
+                        <select type="hidden" name="role-filter" id="role-filter" class="select">
+                            <option value="All">All</option>
+                            <option value="INTERCEPTOR">INTERCEPTOR</option>
+                    <option value="STRIKE">STRIKE</option>
+                    <option value="EWO">EWO</option>
+                    <option value="MULTIROLE">MULTIROLE</option>
+                    
+                        </select>
+                    </td>
+                    <td>
+                        <label for="max-gen">Max</label>
+                        <select name="max-gen" id="max-gen" class="select">
+                            <option value="Any">Any</option>
+                            <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="max-tier" id="max-tier" class="select">
+                            <option value="Any">Any</option>
+                            <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="max-surv" id="max-surv" class="select">
+                            <option value="Any">Any</option>
+                            <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                       <select name="max-cost" id="max-cost" class="select">
+                            <option value="Any">Any</option>
+                            <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="33">33</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="max-a2a" id="max-a2a" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="max-a2g" id="max-a2g" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="max-manu" id="max-manu" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="max-speed" id="max-speed" class="select">
+                            <option value="Any">Any</option>
+                            <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    
+                        </select> 
+                    </td>
+                    <td>
+                        <select name="max-cap" id="max-cap" class="select">
+                            <option value="Any">Any</option>
+                            <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    
+                        </select> 
+                    </td>
+                </tr>
+
             </table>
         </div>
         <!-- Begin Display Table -->
@@ -88,7 +424,7 @@
             <!-- Row: Cranes -->
         
     <!-- Cell: Su-27P Flanker -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-27PFlanker","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":6,"a2a":2,"a2g":-1,"manu":1,"speed":1,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -180,7 +516,7 @@
 
     
     <!-- Cell: Su-27S Flanker -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-27SFlanker","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"1","surv":2,"cost":13,"a2a":2,"a2g":0,"manu":3,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -272,7 +608,7 @@
 
     
     <!-- Cell: Su-33 Sea Flanker -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-33SeaFlanker","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"2","surv":1,"cost":16,"a2a":3,"a2g":1,"manu":3,"speed":2,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -364,7 +700,7 @@
 
     
     <!-- Cell: J-11A Dragon -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-11ADragon","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"2","surv":2,"cost":17,"a2a":3,"a2g":1,"manu":2,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -456,7 +792,7 @@
 
     
     <!-- Cell: Su-34 Fullback -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-34Fullback","family":"Cranes","role":"STRIKE","gen":"4","tier":"2","surv":2,"cost":18,"a2a":3,"a2g":3,"manu":3,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -548,7 +884,7 @@
 
     
     <!-- Cell: J-15D Shock Serpent -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-15DShockSerpent","family":"Cranes","role":"EWO","gen":"4","tier":"3","surv":2,"cost":18,"a2a":1,"a2g":1,"manu":2,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -557,7 +893,7 @@
                 🔴4-3
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -640,7 +976,7 @@
 
     
     <!-- Cell: J-16D Electric Dragon -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-16DElectricDragon","family":"Cranes","role":"EWO","gen":"4","tier":"3","surv":1,"cost":18,"a2a":2,"a2g":2,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -649,7 +985,7 @@
                 🔴4-3
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -732,7 +1068,7 @@
 
     
     <!-- Cell: J-15T Flying Shark -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-15TFlyingShark","family":"Cranes","role":"MULTIROLE","gen":"4","tier":"2","surv":2,"cost":19,"a2a":3,"a2g":3,"manu":2,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -824,7 +1160,7 @@
 
     
     <!-- Cell: Su-30M Crane -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-30MCrane","family":"Cranes","role":"MULTIROLE","gen":"4","tier":"3","surv":1,"cost":22,"a2a":3,"a2g":3,"manu":4,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -916,7 +1252,7 @@
 
     
     <!-- Cell: Su-34M Fullback -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-34MFullback","family":"Cranes","role":"STRIKE","gen":"4","tier":"3","surv":4,"cost":23,"a2a":3,"a2g":4,"manu":4,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1008,7 +1344,7 @@
 
     
     <!-- Cell: xS-32A Golden Eagle -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"xS-32AGoldenEagle","family":"Cranes","role":"MULTIROLE","gen":"4","tier":"4","surv":2,"cost":23,"a2a":3,"a2g":2,"manu":5,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1100,7 +1436,7 @@
 
     
     <!-- Cell: J-16 Hidden Dragon -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-16HiddenDragon","family":"Cranes","role":"STRIKE","gen":"4","tier":"3","surv":3,"cost":24,"a2a":3,"a2g":4,"manu":4,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1192,7 +1528,7 @@
 
     
     <!-- Cell: J-11BG Dragon -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-11BGDragon","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"4","surv":2,"cost":24,"a2a":4,"a2g":0,"manu":3,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1284,7 +1620,7 @@
 
     
     <!-- Cell: Su-27KM Golden Sea -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-27KMGoldenSea","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"4","surv":2,"cost":24,"a2a":4,"a2g":1,"manu":5,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1376,7 +1712,7 @@
 
     
     <!-- Cell: Su-27M Super Flanker -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-27MSuperFlanker","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"4","surv":2,"cost":25,"a2a":4,"a2g":1,"manu":3,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1468,7 +1804,7 @@
 
     
     <!-- Cell: Su-37 Terminator -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-37Terminator","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"5","surv":1,"cost":28,"a2a":4,"a2g":1,"manu":4,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1560,7 +1896,7 @@
 
     
     <!-- Cell: Su-47 Berkut -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-47Berkut","family":"Cranes","role":"MULTIROLE","gen":"4","tier":"5","surv":2,"cost":28,"a2a":4,"a2g":3,"manu":5,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1652,7 +1988,7 @@
 
     
     <!-- Cell: Su-35S Advanced Flanker -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-35SAdvancedFlanker","family":"Cranes","role":"INTERCEPTOR","gen":"4","tier":"5","surv":3,"cost":29,"a2a":4,"a2g":1,"manu":3,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1744,7 +2080,7 @@
 
     
     <!-- Cell: xS-32EA Golden Lighthouse -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"xS-32EAGoldenLighthouse","family":"Cranes","role":"EWO","gen":"4","tier":"5","surv":3,"cost":29,"a2a":3,"a2g":2,"manu":5,"speed":2,"cap":13}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1753,7 +2089,7 @@
                 🔴4-5
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -1836,7 +2172,7 @@
 
     
     <!-- Cell: Su-30SM Super Crane -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-30SMSuperCrane","family":"Cranes","role":"MULTIROLE","gen":"4","tier":"5","surv":2,"cost":30,"a2a":4,"a2g":3,"manu":4,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -1928,7 +2264,7 @@
 
     
     <!-- Cell: J-16B Hidden Dragon -->
-    <td class="pad10 plane Cranes" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-16BHiddenDragon","family":"Cranes","role":"STRIKE","gen":"4","tier":"5","surv":3,"cost":31,"a2a":3,"a2g":5,"manu":4,"speed":2,"cap":14}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2029,7 +2365,7 @@
             <!-- Row: Eagles -->
         
     <!-- Cell: F-15A Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15AEagle","family":"Eagles","role":"INTERCEPTOR","gen":"4","tier":"0","surv":2,"cost":6,"a2a":1,"a2g":-1,"manu":1,"speed":1,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2121,7 +2457,7 @@
 
     
     <!-- Cell: F-15B Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15BEagle","family":"Eagles","role":"INTERCEPTOR","gen":"4","tier":"1","surv":2,"cost":12,"a2a":2,"a2g":0,"manu":2,"speed":2,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2213,7 +2549,7 @@
 
     
     <!-- Cell: F-15DJ Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15DJEagle","family":"Eagles","role":"MULTIROLE","gen":"4","tier":"2","surv":3,"cost":17,"a2a":3,"a2g":1,"manu":3,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2305,7 +2641,7 @@
 
     
     <!-- Cell: F-15C Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15CEagle","family":"Eagles","role":"INTERCEPTOR","gen":"4","tier":"3","surv":3,"cost":20,"a2a":3,"a2g":-1,"manu":3,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2397,7 +2733,7 @@
 
     
     <!-- Cell: F-15N Sea Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15NSeaEagle","family":"Eagles","role":"INTERCEPTOR","gen":"4","tier":"3","surv":2,"cost":20,"a2a":3,"a2g":0,"manu":3,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2489,7 +2825,7 @@
 
     
     <!-- Cell: EF-15G Spark Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-15GSparkEagle","family":"Eagles","role":"EWO","gen":"4","tier":"4","surv":3,"cost":23,"a2a":2,"a2g":3,"manu":2,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2498,7 +2834,7 @@
                 🔴4-4
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -2581,7 +2917,7 @@
 
     
     <!-- Cell: F-15E Strike Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15EStrikeEagle","family":"Eagles","role":"STRIKE","gen":"4","tier":"3","surv":4,"cost":24,"a2a":2,"a2g":4,"manu":2,"speed":4,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2673,7 +3009,7 @@
 
     
     <!-- Cell: F-15K Slam Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15KSlamEagle","family":"Eagles","role":"STRIKE","gen":"4","tier":"4","surv":5,"cost":27,"a2a":3,"a2g":4,"manu":2,"speed":4,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2765,7 +3101,7 @@
 
     
     <!-- Cell: F-15EX Super Mudhen -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15EXSuperMudhen","family":"Eagles","role":"STRIKE","gen":"4","tier":"4","surv":4,"cost":28,"a2a":3,"a2g":4,"manu":3,"speed":3,"cap":14}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2857,7 +3193,7 @@
 
     
     <!-- Cell: F-15S STOL Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15SSTOLEagle","family":"Eagles","role":"STRIKE","gen":"4","tier":"5","surv":3,"cost":28,"a2a":2,"a2g":4,"manu":3,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -2949,7 +3285,7 @@
 
     
     <!-- Cell: F-15CX Advanced Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15CXAdvancedEagle","family":"Eagles","role":"INTERCEPTOR","gen":"4","tier":"5","surv":3,"cost":30,"a2a":4,"a2g":1,"manu":4,"speed":4,"cap":14}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3041,7 +3377,7 @@
 
     
     <!-- Cell: F-15M Active Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15MActiveEagle","family":"Eagles","role":"INTERCEPTOR","gen":"4","tier":"5","surv":2,"cost":30,"a2a":4,"a2g":2,"manu":5,"speed":4,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3133,7 +3469,7 @@
 
     
     <!-- Cell: F-15EJ Kai+ Super Eagle -->
-    <td class="pad10 plane Eagles" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-15EJKai+SuperEagle","family":"Eagles","role":"MULTIROLE","gen":"4","tier":"6","surv":4,"cost":35,"a2a":3,"a2g":3,"manu":5,"speed":4,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3234,7 +3570,7 @@
             <!-- Row: Foxes -->
         
     <!-- Cell: MiG-25P Foxbat -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-25PFoxbat","family":"Foxes","role":"INTERCEPTOR","gen":"3","tier":"0","surv":1,"cost":5,"a2a":2,"a2g":-1,"manu":-1,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3326,7 +3662,7 @@
 
     
     <!-- Cell: MiG-25PD Foxbat -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-25PDFoxbat","family":"Foxes","role":"INTERCEPTOR","gen":"3","tier":"1","surv":2,"cost":5,"a2a":3,"a2g":-1,"manu":-1,"speed":5,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3418,7 +3754,7 @@
 
     
     <!-- Cell: MiG-25RBV Spybat -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-25RBVSpybat","family":"Foxes","role":"EWO","gen":"3","tier":"1","surv":2,"cost":5,"a2a":2,"a2g":-1,"manu":-1,"speed":5,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3427,7 +3763,7 @@
                 🟡3-1
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -3510,7 +3846,7 @@
 
     
     <!-- Cell: MiG-25MP Bathound -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-25MPBathound","family":"Foxes","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":7,"a2a":3,"a2g":-1,"manu":-1,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3602,7 +3938,7 @@
 
     
     <!-- Cell: MiG-25BMS Spybat -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-25BMSSpybat","family":"Foxes","role":"EWO","gen":"3","tier":"3","surv":3,"cost":10,"a2a":2,"a2g":-1,"manu":-1,"speed":5,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3611,7 +3947,7 @@
                 🟡3-3
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -3694,7 +4030,7 @@
 
     
     <!-- Cell: MiG-25MK Super Foxbat -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-25MKSuperFoxbat","family":"Foxes","role":"INTERCEPTOR","gen":"4","tier":"1","surv":2,"cost":10,"a2a":3,"a2g":-1,"manu":-1,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3786,7 +4122,7 @@
 
     
     <!-- Cell: MiG-25ZSL Foxbat Advanced -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-25ZSLFoxbatAdvanced","family":"Foxes","role":"INTERCEPTOR","gen":"3","tier":"3","surv":3,"cost":11,"a2a":4,"a2g":-1,"manu":-1,"speed":5,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3878,7 +4214,7 @@
 
     
     <!-- Cell: MiG-31 Foxhound -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-31Foxhound","family":"Foxes","role":"INTERCEPTOR","gen":"4","tier":"2","surv":2,"cost":15,"a2a":3,"a2g":0,"manu":0,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -3970,7 +4306,7 @@
 
     
     <!-- Cell: MiG-31B Foxhound -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-31BFoxhound","family":"Foxes","role":"INTERCEPTOR","gen":"4","tier":"3","surv":2,"cost":18,"a2a":3,"a2g":0,"manu":0,"speed":4,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4062,7 +4398,7 @@
 
     
     <!-- Cell: MiG-31K Doghound -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-31KDoghound","family":"Foxes","role":"STRIKE","gen":"4","tier":"4","surv":1,"cost":19,"a2a":-1,"a2g":5,"manu":-1,"speed":5,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4154,7 +4490,7 @@
 
     
     <!-- Cell: MiG-31EF Shockfox -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-31EFShockfox","family":"Foxes","role":"EWO","gen":"4","tier":"4","surv":4,"cost":21,"a2a":3,"a2g":1,"manu":-1,"speed":4,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4163,7 +4499,7 @@
                 🔴4-4
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -4246,7 +4582,7 @@
 
     
     <!-- Cell: MiG-31M Foxhound -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-31MFoxhound","family":"Foxes","role":"INTERCEPTOR","gen":"4","tier":"4","surv":3,"cost":23,"a2a":4,"a2g":-1,"manu":-1,"speed":5,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4338,7 +4674,7 @@
 
     
     <!-- Cell: MiG-31BM Foxhound -->
-    <td class="pad10 plane Foxes" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-31BMFoxhound","family":"Foxes","role":"INTERCEPTOR","gen":"4","tier":"5","surv":3,"cost":27,"a2a":5,"a2g":0,"manu":0,"speed":5,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4439,7 +4775,7 @@
             <!-- Row: Freebirds -->
         
     <!-- Cell: Yak-38 Seabreeze -->
-    <td class="pad10 plane Freebirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"Yak-38Seabreeze","family":"Freebirds","role":"STRIKE","gen":"3","tier":"1","surv":2,"cost":5,"a2a":2,"a2g":3,"manu":0,"speed":1,"cap":4}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4532,7 +4868,7 @@
 
     
     <!-- Cell: Yak-38M Freebreeze -->
-    <td class="pad10 plane Freebirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"Yak-38MFreebreeze","family":"Freebirds","role":"STRIKE","gen":"3","tier":"2","surv":2,"cost":5,"a2a":3,"a2g":4,"manu":0,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4625,7 +4961,7 @@
 
     
     <!-- Cell: Yak-39 Super Seabreeze -->
-    <td class="pad10 plane Freebirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"Yak-39SuperSeabreeze","family":"Freebirds","role":"MULTIROLE","gen":"3","tier":"3","surv":2,"cost":9,"a2a":3,"a2g":3,"manu":1,"speed":3,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4718,7 +5054,7 @@
 
     
     <!-- Cell: Yak-141 Freestyle -->
-    <td class="pad10 plane Freebirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"Yak-141Freestyle","family":"Freebirds","role":"INTERCEPTOR","gen":"4","tier":"1","surv":2,"cost":9,"a2a":2,"a2g":-1,"manu":0,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4811,7 +5147,7 @@
 
     
     <!-- Cell: Yak-41M Freestyle -->
-    <td class="pad10 plane Freebirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"Yak-41MFreestyle","family":"Freebirds","role":"MULTIROLE","gen":"4","tier":"2","surv":2,"cost":13,"a2a":1,"a2g":1,"manu":0,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -4904,7 +5240,7 @@
 
     
     <!-- Cell: Yak-43M Super Freestyle -->
-    <td class="pad10 plane Freebirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"Yak-43MSuperFreestyle","family":"Freebirds","role":"INTERCEPTOR","gen":"4","tier":"3","surv":2,"cost":17,"a2a":3,"a2g":0,"manu":0,"speed":3,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5006,7 +5342,7 @@
             <!-- Row: Harriers -->
         
     <!-- Cell: Harrier GR.3 -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"HarrierGR.3","family":"Harriers","role":"STRIKE","gen":"3","tier":"2","surv":2,"cost":5,"a2a":0,"a2g":2,"manu":2,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5098,7 +5434,7 @@
 
     
     <!-- Cell: Sea Harrier FRS.51+ -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"SeaHarrierFRS.51+","family":"Harriers","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":5,"a2a":1,"a2g":0,"manu":2,"speed":1,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5190,7 +5526,7 @@
 
     
     <!-- Cell: Harrier II GR.5 -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"HarrierIIGR.5","family":"Harriers","role":"STRIKE","gen":"4","tier":"0","surv":2,"cost":5,"a2a":0,"a2g":2,"manu":2,"speed":1,"cap":4}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5282,7 +5618,7 @@
 
     
     <!-- Cell: Sea Harrier FRS.1 -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"SeaHarrierFRS.1","family":"Harriers","role":"MULTIROLE","gen":"3","tier":"3","surv":1,"cost":8,"a2a":1,"a2g":2,"manu":3,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5374,7 +5710,7 @@
 
     
     <!-- Cell: AV-8B Harrier II -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"AV-8BHarrierII","family":"Harriers","role":"STRIKE","gen":"4","tier":"1","surv":2,"cost":10,"a2a":1,"a2g":1,"manu":3,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5466,7 +5802,7 @@
 
     
     <!-- Cell: Sea Harrier FA.2 -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"SeaHarrierFA.2","family":"Harriers","role":"MULTIROLE","gen":"4","tier":"1","surv":1,"cost":10,"a2a":1,"a2g":1,"manu":3,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5558,7 +5894,7 @@
 
     
     <!-- Cell: AV-8C Harrier -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"AV-8CHarrier","family":"Harriers","role":"STRIKE","gen":"3","tier":"4","surv":1,"cost":11,"a2a":0,"a2g":3,"manu":2,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5650,7 +5986,7 @@
 
     
     <!-- Cell: Harrier II GR.7A -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"HarrierIIGR.7A","family":"Harriers","role":"STRIKE","gen":"4","tier":"2","surv":2,"cost":13,"a2a":0,"a2g":2,"manu":3,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5742,7 +6078,7 @@
 
     
     <!-- Cell: Sea Harrier FRS.51 -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"SeaHarrierFRS.51","family":"Harriers","role":"MULTIROLE","gen":"3","tier":"5","surv":2,"cost":15,"a2a":2,"a2g":3,"manu":3,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5834,7 +6170,7 @@
 
     
     <!-- Cell: AV-8S Bull Harrier -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"AV-8SBullHarrier","family":"Harriers","role":"MULTIROLE","gen":"3","tier":"5","surv":1,"cost":15,"a2a":1,"a2g":3,"manu":3,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -5926,7 +6262,7 @@
 
     
     <!-- Cell: AV-8B+ Harrier II+ -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"AV-8B+HarrierII+","family":"Harriers","role":"STRIKE","gen":"4","tier":"3","surv":2,"cost":18,"a2a":2,"a2g":3,"manu":3,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6018,7 +6354,7 @@
 
     
     <!-- Cell: Sea Harrier FARS.2 -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"SeaHarrierFARS.2","family":"Harriers","role":"INTERCEPTOR","gen":"4","tier":"3","surv":3,"cost":18,"a2a":3,"a2g":1,"manu":3,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6110,7 +6446,7 @@
 
     
     <!-- Cell: Harrier II GR.9A -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"HarrierIIGR.9A","family":"Harriers","role":"STRIKE","gen":"4","tier":"3","surv":4,"cost":20,"a2a":2,"a2g":4,"manu":3,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6202,7 +6538,7 @@
 
     
     <!-- Cell: Sea Harrier II GR.13 -->
-    <td class="pad10 plane Harriers" id="">
+    <td class="pad10 plane" id="" data={"plane":"SeaHarrierIIGR.13","family":"Harriers","role":"MULTIROLE","gen":"4","tier":"4","surv":3,"cost":24,"a2a":4,"a2g":4,"manu":3,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6303,7 +6639,7 @@
             <!-- Row: Mirages -->
         
     <!-- Cell: Mirage 2000C -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"Mirage2000C","family":"Mirages","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":7,"a2a":1,"a2g":1,"manu":3,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6395,7 +6731,7 @@
 
     
     <!-- Cell: Mirage 2000D -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"Mirage2000D","family":"Mirages","role":"STRIKE","gen":"4","tier":"0","surv":2,"cost":8,"a2a":1,"a2g":3,"manu":2,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6487,7 +6823,7 @@
 
     
     <!-- Cell: Mirage 4000 -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"Mirage4000","family":"Mirages","role":"INTERCEPTOR","gen":"4","tier":"1","surv":2,"cost":11,"a2a":2,"a2g":0,"manu":2,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6579,7 +6915,7 @@
 
     
     <!-- Cell: Mirage F1C -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"MirageF1C","family":"Mirages","role":"STRIKE","gen":"3","tier":"4","surv":2,"cost":12,"a2a":2,"a2g":3,"manu":2,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6671,7 +7007,7 @@
 
     
     <!-- Cell: Mirage IIIC -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"MirageIIIC","family":"Mirages","role":"INTERCEPTOR","gen":"3","tier":"4","surv":2,"cost":13,"a2a":3,"a2g":1,"manu":3,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6763,7 +7099,7 @@
 
     
     <!-- Cell: Tejas Mk1 -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"TejasMk1","family":"Mirages","role":"MULTIROLE","gen":"4","tier":"2","surv":1,"cost":15,"a2a":2,"a2g":3,"manu":3,"speed":3,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6855,7 +7191,7 @@
 
     
     <!-- Cell: Mirage 2000-5F -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"Mirage2000-5F","family":"Mirages","role":"MULTIROLE","gen":"4","tier":"2","surv":2,"cost":16,"a2a":3,"a2g":2,"manu":4,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -6947,7 +7283,7 @@
 
     
     <!-- Cell: Mirage IIIO -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"MirageIIIO","family":"Mirages","role":"MULTIROLE","gen":"3","tier":"5","surv":3,"cost":17,"a2a":2,"a2g":2,"manu":4,"speed":3,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7039,7 +7375,7 @@
 
     
     <!-- Cell: Tejas Mk2 -->
-    <td class="pad10 plane Mirages" id="">
+    <td class="pad10 plane" id="" data={"plane":"TejasMk2","family":"Mirages","role":"MULTIROLE","gen":"4","tier":"3","surv":2,"cost":21,"a2a":2,"a2g":3,"manu":4,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7140,7 +7476,7 @@
             <!-- Row: Pantheras -->
         
     <!-- Cell: CF-5A Maple Tiger -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"CF-5AMapleTiger","family":"Pantheras","role":"MULTIROLE","gen":"3","tier":"1","surv":2,"cost":5,"a2a":2,"a2g":1,"manu":3,"speed":1,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7232,7 +7568,7 @@
 
     
     <!-- Cell: F-5E+ Tiger III -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-5E+TigerIII","family":"Pantheras","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":5,"a2a":1,"a2g":1,"manu":2,"speed":0,"cap":4}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7324,7 +7660,7 @@
 
     
     <!-- Cell: F-17 Sandfly -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-17Sandfly","family":"Pantheras","role":"MULTIROLE","gen":"4","tier":"0","surv":2,"cost":5,"a2a":0,"a2g":0,"manu":2,"speed":0,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7416,7 +7752,7 @@
 
     
     <!-- Cell: F-5E Tiger II -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-5ETigerII","family":"Pantheras","role":"MULTIROLE","gen":"3","tier":"2","surv":1,"cost":6,"a2a":2,"a2g":2,"manu":3,"speed":1,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7508,7 +7844,7 @@
 
     
     <!-- Cell: F-20A Tigershark -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-20ATigershark","family":"Pantheras","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":6,"a2a":1,"a2g":1,"manu":2,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7600,7 +7936,7 @@
 
     
     <!-- Cell: NF-5A Dike Tiger -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"NF-5ADikeTiger","family":"Pantheras","role":"MULTIROLE","gen":"3","tier":"3","surv":1,"cost":10,"a2a":3,"a2g":1,"manu":3,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7692,7 +8028,7 @@
 
     
     <!-- Cell: F-29A Ascender II -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-29AAscenderII","family":"Pantheras","role":"INTERCEPTOR","gen":"4","tier":"1","surv":0,"cost":10,"a2a":3,"a2g":1,"manu":4,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7784,7 +8120,7 @@
 
     
     <!-- Cell: F-CK-1B Ching-Kuo -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-CK-1BChing-Kuo","family":"Pantheras","role":"MULTIROLE","gen":"4","tier":"2","surv":1,"cost":13,"a2a":0,"a2g":1,"manu":2,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7876,7 +8212,7 @@
 
     
     <!-- Cell: F-5IR-80 Thundercat -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-5IR-80Thundercat","family":"Pantheras","role":"MULTIROLE","gen":"3","tier":"4","surv":3,"cost":15,"a2a":3,"a2g":2,"manu":4,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -7968,7 +8304,7 @@
 
     
     <!-- Cell: F-CK-1C Hsiang Sheng -->
-    <td class="pad10 plane Pantheras" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-CK-1CHsiangSheng","family":"Pantheras","role":"MULTIROLE","gen":"4","tier":"3","surv":2,"cost":18,"a2a":1,"a2g":3,"manu":2,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8069,7 +8405,7 @@
             <!-- Row: Pearlbirds -->
         
     <!-- Cell: J-8I ACT Loong -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-8IACTLoong","family":"Pearlbirds","role":"INTERCEPTOR","gen":"3","tier":"3","surv":0,"cost":8,"a2a":3,"a2g":0,"manu":3,"speed":3,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8161,7 +8497,7 @@
 
     
     <!-- Cell: J-8B-II Loong II -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-8B-IILoongII","family":"Pearlbirds","role":"INTERCEPTOR","gen":"4","tier":"1","surv":1,"cost":9,"a2a":2,"a2g":0,"manu":1,"speed":3,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8253,7 +8589,7 @@
 
     
     <!-- Cell: J-9C Flashpoint -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-9CFlashpoint","family":"Pearlbirds","role":"MULTIROLE","gen":"4","tier":"1","surv":1,"cost":10,"a2a":1,"a2g":1,"manu":3,"speed":1,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8345,7 +8681,7 @@
 
     
     <!-- Cell: J-8II Loong II -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-8IILoongII","family":"Pearlbirds","role":"INTERCEPTOR","gen":"3","tier":"4","surv":1,"cost":11,"a2a":3,"a2g":0,"manu":1,"speed":4,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8437,7 +8773,7 @@
 
     
     <!-- Cell: J-9A Flashpoint -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-9AFlashpoint","family":"Pearlbirds","role":"INTERCEPTOR","gen":"3","tier":"4","surv":1,"cost":12,"a2a":4,"a2g":0,"manu":3,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8529,7 +8865,7 @@
 
     
     <!-- Cell: J-8II-ACT Agile Loong -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-8II-ACTAgileLoong","family":"Pearlbirds","role":"INTERCEPTOR","gen":"4","tier":"3","surv":1,"cost":18,"a2a":4,"a2g":0,"manu":3,"speed":3,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8621,7 +8957,7 @@
 
     
     <!-- Cell: J-8-IIM Super Loong -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-8-IIMSuperLoong","family":"Pearlbirds","role":"INTERCEPTOR","gen":"4","tier":"3","surv":2,"cost":19,"a2a":4,"a2g":1,"manu":2,"speed":4,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8713,7 +9049,7 @@
 
     
     <!-- Cell: J-10A Firebird -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-10AFirebird","family":"Pearlbirds","role":"MULTIROLE","gen":"4","tier":"4","surv":2,"cost":24,"a2a":3,"a2g":3,"manu":3,"speed":4,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8805,7 +9141,7 @@
 
     
     <!-- Cell: J-10C Super Firebird -->
-    <td class="pad10 plane Pearlbirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-10CSuperFirebird","family":"Pearlbirds","role":"MULTIROLE","gen":"4","tier":"5","surv":3,"cost":27,"a2a":3,"a2g":3,"manu":3,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8906,7 +9242,7 @@
             <!-- Row: Phantoms -->
         
     <!-- Cell: F-4B Phantom II -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4BPhantomII","family":"Phantoms","role":"MULTIROLE","gen":"2","tier":"1","surv":1,"cost":5,"a2a":1,"a2g":1,"manu":1,"speed":1,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -8998,7 +9334,7 @@
 
     
     <!-- Cell: F-4C Phantom II -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4CPhantomII","family":"Phantoms","role":"MULTIROLE","gen":"2","tier":"2","surv":0,"cost":5,"a2a":2,"a2g":2,"manu":0,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9090,7 +9426,7 @@
 
     
     <!-- Cell: F-4D Phantom II -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4DPhantomII","family":"Phantoms","role":"INTERCEPTOR","gen":"2","tier":"2","surv":1,"cost":5,"a2a":3,"a2g":-1,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9182,7 +9518,7 @@
 
     
     <!-- Cell: F-4F ICE Arctic Phantom -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4FICEArcticPhantom","family":"Phantoms","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":6,"a2a":1,"a2g":0,"manu":0,"speed":1,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9274,7 +9610,7 @@
 
     
     <!-- Cell: F-4EJ Kai Phantom II -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4EJKaiPhantomII","family":"Phantoms","role":"MULTIROLE","gen":"4","tier":"0","surv":2,"cost":6,"a2a":1,"a2g":0,"manu":1,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9366,7 +9702,7 @@
 
     
     <!-- Cell: F-4E Phantom II -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4EPhantomII","family":"Phantoms","role":"MULTIROLE","gen":"3","tier":"3","surv":1,"cost":10,"a2a":1,"a2g":1,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9458,7 +9794,7 @@
 
     
     <!-- Cell: F-4J Phantom II -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4JPhantomII","family":"Phantoms","role":"INTERCEPTOR","gen":"3","tier":"3","surv":1,"cost":10,"a2a":3,"a2g":0,"manu":1,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9550,7 +9886,7 @@
 
     
     <!-- Cell: EF-4G Weasel Phantom -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-4GWeaselPhantom","family":"Phantoms","role":"EWO","gen":"3","tier":"3","surv":1,"cost":10,"a2a":1,"a2g":1,"manu":2,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9559,7 +9895,7 @@
                 🟡3-3
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -9642,7 +9978,7 @@
 
     
     <!-- Cell: F-4VX Sea Ghost -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4VXSeaGhost","family":"Phantoms","role":"INTERCEPTOR","gen":"4","tier":"1","surv":1,"cost":11,"a2a":1,"a2g":-1,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9734,7 +10070,7 @@
 
     
     <!-- Cell: F-4IX Spectre -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4IXSpectre","family":"Phantoms","role":"MULTIROLE","gen":"4","tier":"1","surv":3,"cost":11,"a2a":1,"a2g":0,"manu":0,"speed":4,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9826,7 +10162,7 @@
 
     
     <!-- Cell: F-4S Sea Phantom -->
-    <td class="pad10 plane Phantoms" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-4SSeaPhantom","family":"Phantoms","role":"MULTIROLE","gen":"3","tier":"4","surv":2,"cost":15,"a2a":2,"a2g":2,"manu":3,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -9927,7 +10263,7 @@
             <!-- Row: Rogues -->
         
     <!-- Cell: A-6C Intruder -->
-    <td class="pad10 plane Rogues" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-6CIntruder","family":"Rogues","role":"STRIKE","gen":"4","tier":"0","surv":2,"cost":5,"a2a":-1,"a2g":2,"manu":0,"speed":-1,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10019,7 +10355,7 @@
 
     
     <!-- Cell: EA-6B Prowler -->
-    <td class="pad10 plane Rogues" id="">
+    <td class="pad10 plane" id="" data={"plane":"EA-6BProwler","family":"Rogues","role":"EWO","gen":"4","tier":"0","surv":4,"cost":6,"a2a":0,"a2g":0,"manu":0,"speed":0,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10028,7 +10364,7 @@
                 🔴4-0
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -10111,7 +10447,7 @@
 
     
     <!-- Cell: A-6E TRAM -->
-    <td class="pad10 plane Rogues" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-6ETRAM","family":"Rogues","role":"STRIKE","gen":"4","tier":"1","surv":2,"cost":9,"a2a":-1,"a2g":3,"manu":0,"speed":0,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10203,7 +10539,7 @@
 
     
     <!-- Cell: A-6E SWIP II -->
-    <td class="pad10 plane Rogues" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-6ESWIPII","family":"Rogues","role":"STRIKE","gen":"4","tier":"1","surv":3,"cost":9,"a2a":-1,"a2g":3,"manu":0,"speed":0,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10295,7 +10631,7 @@
 
     
     <!-- Cell: A-6G Super Intruder -->
-    <td class="pad10 plane Rogues" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-6GSuperIntruder","family":"Rogues","role":"STRIKE","gen":"4","tier":"2","surv":3,"cost":15,"a2a":3,"a2g":4,"manu":-1,"speed":0,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10387,7 +10723,7 @@
 
     
     <!-- Cell: A-6F Intruder II -->
-    <td class="pad10 plane Rogues" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-6FIntruderII","family":"Rogues","role":"STRIKE","gen":"4","tier":"3","surv":5,"cost":20,"a2a":3,"a2g":4,"manu":0,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10488,7 +10824,7 @@
             <!-- Row: Rooks -->
         
     <!-- Cell: Il-40 -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Il-40","family":"Rooks","role":"STRIKE","gen":"2","tier":"4","surv":3,"cost":5,"a2a":0,"a2g":4,"manu":2,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10580,7 +10916,7 @@
 
     
     <!-- Cell: A-10A Warthog -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-10AWarthog","family":"Rooks","role":"STRIKE","gen":"4","tier":"0","surv":3,"cost":5,"a2a":0,"a2g":1,"manu":1,"speed":0,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10672,7 +11008,7 @@
 
     
     <!-- Cell: Su-25 Rook -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-25Rook","family":"Rooks","role":"STRIKE","gen":"4","tier":"0","surv":3,"cost":6,"a2a":0,"a2g":1,"manu":1,"speed":1,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10764,7 +11100,7 @@
 
     
     <!-- Cell: EA-10B Misthog -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"EA-10BMisthog","family":"Rooks","role":"EWO","gen":"4","tier":"1","surv":3,"cost":9,"a2a":0,"a2g":0,"manu":2,"speed":1,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10773,7 +11109,7 @@
                 🔴4-1
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -10856,7 +11192,7 @@
 
     
     <!-- Cell: Su-25UBM Frogfoot -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-25UBMFrogfoot","family":"Rooks","role":"STRIKE","gen":"4","tier":"1","surv":4,"cost":12,"a2a":1,"a2g":3,"manu":1,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -10948,7 +11284,7 @@
 
     
     <!-- Cell: Il-102 -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Il-102","family":"Rooks","role":"STRIKE","gen":"3","tier":"5","surv":3,"cost":16,"a2a":1,"a2g":4,"manu":2,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11040,7 +11376,7 @@
 
     
     <!-- Cell: Su-39 Super Frogfoot -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-39SuperFrogfoot","family":"Rooks","role":"STRIKE","gen":"4","tier":"3","surv":3,"cost":19,"a2a":2,"a2g":3,"manu":2,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11132,7 +11468,7 @@
 
     
     <!-- Cell: A-10C Warthog -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-10CWarthog","family":"Rooks","role":"STRIKE","gen":"4","tier":"3","surv":4,"cost":19,"a2a":2,"a2g":3,"manu":2,"speed":1,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11224,7 +11560,7 @@
 
     
     <!-- Cell: R-20 Varrtsvin -->
-    <td class="pad10 plane Rooks" id="">
+    <td class="pad10 plane" id="" data={"plane":"R-20Varrtsvin","family":"Rooks","role":"STRIKE","gen":"4","tier":"5","surv":1,"cost":27,"a2a":3,"a2g":5,"manu":3,"speed":1,"cap":14}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11325,7 +11661,7 @@
             <!-- Row: Stargazers -->
         
     <!-- Cell: F-104A Starfighter -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-104AStarfighter","family":"Stargazers","role":"INTERCEPTOR","gen":"2","tier":"3","surv":0,"cost":5,"a2a":3,"a2g":-1,"manu":0,"speed":4,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11417,7 +11753,7 @@
 
     
     <!-- Cell: F-104J Seastar -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-104JSeastar","family":"Stargazers","role":"INTERCEPTOR","gen":"3","tier":"1","surv":1,"cost":5,"a2a":3,"a2g":-1,"manu":0,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11509,7 +11845,7 @@
 
     
     <!-- Cell: RF-104G Stareyes -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"RF-104GStareyes","family":"Stargazers","role":"EWO","gen":"3","tier":"1","surv":2,"cost":5,"a2a":0,"a2g":-1,"manu":0,"speed":3,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11518,7 +11854,7 @@
                 🟡3-1
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -11601,7 +11937,7 @@
 
     
     <!-- Cell: F-104G Superstar -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-104GSuperstar","family":"Stargazers","role":"MULTIROLE","gen":"3","tier":"1","surv":1,"cost":5,"a2a":1,"a2g":1,"manu":0,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11693,7 +12029,7 @@
 
     
     <!-- Cell: F-104ASAM Super Mountainstar -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-104ASAMSuperMountainstar","family":"Stargazers","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":5,"a2a":2,"a2g":-1,"manu":0,"speed":2,"cap":4}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11785,7 +12121,7 @@
 
     
     <!-- Cell: F-27-1600 Super Lancer -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-27-1600SuperLancer","family":"Stargazers","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":6,"a2a":2,"a2g":1,"manu":0,"speed":3,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11877,7 +12213,7 @@
 
     
     <!-- Cell: F-104C Starfighter -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-104CStarfighter","family":"Stargazers","role":"MULTIROLE","gen":"2","tier":"5","surv":1,"cost":7,"a2a":3,"a2g":1,"manu":0,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -11969,7 +12305,7 @@
 
     
     <!-- Cell: FL-288 Starlancer -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"FL-288Starlancer","family":"Stargazers","role":"INTERCEPTOR","gen":"3","tier":"2","surv":2,"cost":7,"a2a":3,"a2g":-1,"manu":0,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12061,7 +12397,7 @@
 
     
     <!-- Cell: F-104ASA Mountainstar -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-104ASAMountainstar","family":"Stargazers","role":"INTERCEPTOR","gen":"3","tier":"3","surv":1,"cost":7,"a2a":3,"a2g":-1,"manu":0,"speed":4,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12153,7 +12489,7 @@
 
     
     <!-- Cell: CF-104 Polaris -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"CF-104Polaris","family":"Stargazers","role":"MULTIROLE","gen":"2","tier":"5","surv":1,"cost":8,"a2a":3,"a2g":1,"manu":-1,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12245,7 +12581,7 @@
 
     
     <!-- Cell: CF-105A Arrow -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"CF-105AArrow","family":"Stargazers","role":"INTERCEPTOR","gen":"3","tier":"3","surv":3,"cost":10,"a2a":4,"a2g":-1,"manu":-1,"speed":5,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12337,7 +12673,7 @@
 
     
     <!-- Cell: FL-1200 Lancer -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"FL-1200Lancer","family":"Stargazers","role":"MULTIROLE","gen":"3","tier":"5","surv":1,"cost":16,"a2a":3,"a2g":1,"manu":2,"speed":4,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12429,7 +12765,7 @@
 
     
     <!-- Cell: CF-106 Broadhead -->
-    <td class="pad10 plane Stargazers" id="">
+    <td class="pad10 plane" id="" data={"plane":"CF-106Broadhead","family":"Stargazers","role":"INTERCEPTOR","gen":"4","tier":"6","surv":2,"cost":31,"a2a":5,"a2g":0,"manu":0,"speed":5,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12530,7 +12866,7 @@
             <!-- Row: Sveabirds -->
         
     <!-- Cell: JA 35A Draken -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JA35ADraken","family":"Sveabirds","role":"INTERCEPTOR","gen":"3","tier":"0","surv":0,"cost":5,"a2a":1,"a2g":-1,"manu":1,"speed":1,"cap":4}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12622,7 +12958,7 @@
 
     
     <!-- Cell: JA 35D Draken -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JA35DDraken","family":"Sveabirds","role":"INTERCEPTOR","gen":"3","tier":"1","surv":1,"cost":5,"a2a":2,"a2g":-1,"manu":2,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12714,7 +13050,7 @@
 
     
     <!-- Cell: JA 37D Viggen -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JA37DViggen","family":"Sveabirds","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":7,"a2a":1,"a2g":0,"manu":2,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12806,7 +13142,7 @@
 
     
     <!-- Cell: JA 35J Draken -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JA35JDraken","family":"Sveabirds","role":"INTERCEPTOR","gen":"3","tier":"3","surv":2,"cost":8,"a2a":2,"a2g":0,"manu":2,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12898,7 +13234,7 @@
 
     
     <!-- Cell: AJ 37 Thunderbolt -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"AJ37Thunderbolt","family":"Sveabirds","role":"STRIKE","gen":"4","tier":"1","surv":2,"cost":9,"a2a":0,"a2g":0,"manu":1,"speed":1,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12990,7 +13326,7 @@
 
     
     <!-- Cell: SK 37E Jambolt -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"SK37EJambolt","family":"Sveabirds","role":"EWO","gen":"3","tier":"4","surv":1,"cost":12,"a2a":2,"a2g":1,"manu":3,"speed":1,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -12999,7 +13335,7 @@
                 🟡3-4
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -13082,7 +13418,7 @@
 
     
     <!-- Cell: JA 37C Viggen -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JA37CViggen","family":"Sveabirds","role":"MULTIROLE","gen":"3","tier":"4","surv":3,"cost":15,"a2a":3,"a2g":1,"manu":3,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13174,7 +13510,7 @@
 
     
     <!-- Cell: JAS 39A Gripen A -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JAS39AGripenA","family":"Sveabirds","role":"MULTIROLE","gen":"4","tier":"2","surv":1,"cost":16,"a2a":2,"a2g":1,"manu":4,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13266,7 +13602,7 @@
 
     
     <!-- Cell: JAS39EF Gripen EA -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JAS39EFGripenEA","family":"Sveabirds","role":"EWO","gen":"4","tier":"3","surv":3,"cost":20,"a2a":1,"a2g":2,"manu":3,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13275,7 +13611,7 @@
                 🔴4-3
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -13358,7 +13694,7 @@
 
     
     <!-- Cell: JAS 39C Gripen C -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JAS39CGripenC","family":"Sveabirds","role":"MULTIROLE","gen":"4","tier":"3","surv":2,"cost":21,"a2a":3,"a2g":2,"manu":4,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13450,7 +13786,7 @@
 
     
     <!-- Cell: JAS 39E Gripen E -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"JAS39EGripenE","family":"Sveabirds","role":"MULTIROLE","gen":"4","tier":"4","surv":3,"cost":26,"a2a":2,"a2g":3,"manu":4,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13542,7 +13878,7 @@
 
     
     <!-- Cell: P-26G Roller Kimaira -->
-    <td class="pad10 plane Sveabirds" id="">
+    <td class="pad10 plane" id="" data={"plane":"P-26GRollerKimaira","family":"Sveabirds","role":"MULTIROLE","gen":"4","tier":"5","surv":4,"cost":30,"a2a":4,"a2g":2,"manu":4,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13643,7 +13979,7 @@
             <!-- Row: Swallows -->
         
     <!-- Cell: J-8I Loong (Early) -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"J-8ILoong(Early)","family":"Swallows","role":"INTERCEPTOR","gen":"3","tier":"2","surv":2,"cost":5,"a2a":2,"a2g":0,"manu":1,"speed":3,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13735,7 +14071,7 @@
 
     
     <!-- Cell: JF-17 Thunder -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"JF-17Thunder","family":"Swallows","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":5,"a2a":0,"a2g":0,"manu":1,"speed":1,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13827,7 +14163,7 @@
 
     
     <!-- Cell: MiG-21Bis-UPG Bison -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-21Bis-UPGBison","family":"Swallows","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":6,"a2a":3,"a2g":-1,"manu":1,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -13919,7 +14255,7 @@
 
     
     <!-- Cell: MiG-29 Fulcrum 9.12 -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-29Fulcrum9.12","family":"Swallows","role":"INTERCEPTOR","gen":"4","tier":"0","surv":0,"cost":6,"a2a":2,"a2g":0,"manu":2,"speed":1,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14011,7 +14347,7 @@
 
     
     <!-- Cell: MiG-21-93 -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-21-93","family":"Swallows","role":"INTERCEPTOR","gen":"4","tier":"0","surv":2,"cost":7,"a2a":2,"a2g":-1,"manu":1,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14103,7 +14439,7 @@
 
     
     <!-- Cell: F-7IIH Airguard -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-7IIHAirguard","family":"Swallows","role":"INTERCEPTOR","gen":"3","tier":"3","surv":2,"cost":9,"a2a":2,"a2g":0,"manu":3,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14195,7 +14531,7 @@
 
     
     <!-- Cell: Mig-29K Sea Fulcrum -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"Mig-29KSeaFulcrum","family":"Swallows","role":"MULTIROLE","gen":"4","tier":"1","surv":1,"cost":10,"a2a":2,"a2g":1,"manu":2,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14287,7 +14623,7 @@
 
     
     <!-- Cell: MiG-21bis Super Fishbed -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-21bisSuperFishbed","family":"Swallows","role":"INTERCEPTOR","gen":"3","tier":"4","surv":1,"cost":14,"a2a":4,"a2g":0,"manu":3,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14379,7 +14715,7 @@
 
     
     <!-- Cell: MiG-29M Fulcrum Advanced -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-29MFulcrumAdvanced","family":"Swallows","role":"INTERCEPTOR","gen":"4","tier":"2","surv":1,"cost":15,"a2a":3,"a2g":1,"manu":3,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14471,7 +14807,7 @@
 
     
     <!-- Cell: MiG-21MGBT -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-21MGBT","family":"Swallows","role":"EWO","gen":"3","tier":"5","surv":3,"cost":16,"a2a":1,"a2g":1,"manu":4,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14480,7 +14816,7 @@
                 🟡3-5
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -14563,7 +14899,7 @@
 
     
     <!-- Cell: MiG-21Y-8 Superfin -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-21Y-8Superfin","family":"Swallows","role":"INTERCEPTOR","gen":"3","tier":"5","surv":3,"cost":17,"a2a":4,"a2g":1,"manu":4,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14655,7 +14991,7 @@
 
     
     <!-- Cell: F-7M Super Airguard -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-7MSuperAirguard","family":"Swallows","role":"INTERCEPTOR","gen":"3","tier":"5","surv":2,"cost":18,"a2a":4,"a2g":1,"manu":2,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14747,7 +15083,7 @@
 
     
     <!-- Cell: MiG-35 Super Fulcrum -->
-    <td class="pad10 plane Swallows" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-35SuperFulcrum","family":"Swallows","role":"MULTIROLE","gen":"4","tier":"3","surv":1,"cost":21,"a2a":3,"a2g":2,"manu":3,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14848,7 +15184,7 @@
             <!-- Row: Swashbucklers -->
         
     <!-- Cell: A-4B Skyhawk -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-4BSkyhawk","family":"Swashbucklers","role":"STRIKE","gen":"2","tier":"1","surv":1,"cost":5,"a2a":0,"a2g":2,"manu":2,"speed":0,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -14940,7 +15276,7 @@
 
     
     <!-- Cell: A-4C Skyhawk -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-4CSkyhawk","family":"Swashbucklers","role":"STRIKE","gen":"2","tier":"3","surv":1,"cost":5,"a2a":1,"a2g":2,"manu":2,"speed":1,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15032,7 +15368,7 @@
 
     
     <!-- Cell: A-4E Skyhawk -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-4ESkyhawk","family":"Swashbucklers","role":"STRIKE","gen":"3","tier":"1","surv":2,"cost":5,"a2a":1,"a2g":2,"manu":2,"speed":0,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15124,7 +15460,7 @@
 
     
     <!-- Cell: A-7A Corsair II -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-7ACorsairII","family":"Swashbucklers","role":"STRIKE","gen":"3","tier":"2","surv":2,"cost":5,"a2a":1,"a2g":3,"manu":1,"speed":1,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15216,7 +15552,7 @@
 
     
     <!-- Cell: A-4F Skyhawk -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-4FSkyhawk","family":"Swashbucklers","role":"STRIKE","gen":"3","tier":"2","surv":2,"cost":7,"a2a":1,"a2g":3,"manu":3,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15308,7 +15644,7 @@
 
     
     <!-- Cell: A-4SU Super Skyhawk -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-4SUSuperSkyhawk","family":"Swashbucklers","role":"STRIKE","gen":"4","tier":"0","surv":2,"cost":7,"a2a":1,"a2g":2,"manu":3,"speed":0,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15400,7 +15736,7 @@
 
     
     <!-- Cell: F8U-1 Crusader -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F8U-1Crusader","family":"Swashbucklers","role":"INTERCEPTOR","gen":"3","tier":"3","surv":2,"cost":9,"a2a":3,"a2g":-1,"manu":3,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15492,7 +15828,7 @@
 
     
     <!-- Cell: A-7D Corsair II -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-7DCorsairII","family":"Swashbucklers","role":"STRIKE","gen":"3","tier":"3","surv":2,"cost":10,"a2a":2,"a2g":4,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15584,7 +15920,7 @@
 
     
     <!-- Cell: F8U-3C Crusader II -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F8U-3CCrusaderII","family":"Swashbucklers","role":"INTERCEPTOR","gen":"4","tier":"1","surv":2,"cost":10,"a2a":2,"a2g":-1,"manu":2,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15676,7 +16012,7 @@
 
     
     <!-- Cell: F8U-1000 Crusader Enhanced -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F8U-1000CrusaderEnhanced","family":"Swashbucklers","role":"INTERCEPTOR","gen":"3","tier":"4","surv":2,"cost":14,"a2a":3,"a2g":0,"manu":3,"speed":3,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15768,7 +16104,7 @@
 
     
     <!-- Cell: F8U-2NE Bread Crusader -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F8U-2NEBreadCrusader","family":"Swashbucklers","role":"INTERCEPTOR","gen":"3","tier":"4","surv":2,"cost":15,"a2a":4,"a2g":0,"manu":4,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15860,7 +16196,7 @@
 
     
     <!-- Cell: A-4K Skyhawk -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-4KSkyhawk","family":"Swashbucklers","role":"STRIKE","gen":"3","tier":"4","surv":3,"cost":15,"a2a":2,"a2g":4,"manu":3,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -15952,7 +16288,7 @@
 
     
     <!-- Cell: A-7F Strikefighter -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-7FStrikefighter","family":"Swashbucklers","role":"STRIKE","gen":"3","tier":"5","surv":2,"cost":16,"a2a":2,"a2g":4,"manu":3,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16044,7 +16380,7 @@
 
     
     <!-- Cell: F8U-3 Super Crusader -->
-    <td class="pad10 plane Swashbucklers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F8U-3SuperCrusader","family":"Swashbucklers","role":"INTERCEPTOR","gen":"3","tier":"5","surv":3,"cost":19,"a2a":4,"a2g":-1,"manu":4,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16145,7 +16481,7 @@
             <!-- Row: Tomcats -->
         
     <!-- Cell: F-14A Tomcat -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-14ATomcat","family":"Tomcats","role":"INTERCEPTOR","gen":"4","tier":"1","surv":0,"cost":11,"a2a":2,"a2g":-1,"manu":3,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16237,7 +16573,7 @@
 
     
     <!-- Cell: F-14A+ Tomcat+ -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-14A+Tomcat+","family":"Tomcats","role":"INTERCEPTOR","gen":"4","tier":"2","surv":1,"cost":17,"a2a":4,"a2g":0,"manu":3,"speed":2,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16329,7 +16665,7 @@
 
     
     <!-- Cell: F-14B Bombcat -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-14BBombcat","family":"Tomcats","role":"MULTIROLE","gen":"4","tier":"3","surv":2,"cost":21,"a2a":3,"a2g":1,"manu":3,"speed":3,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16421,7 +16757,7 @@
 
     
     <!-- Cell: F-14D Super Tomcat -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-14DSuperTomcat","family":"Tomcats","role":"MULTIROLE","gen":"4","tier":"4","surv":2,"cost":26,"a2a":3,"a2g":2,"manu":3,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16513,7 +16849,7 @@
 
     
     <!-- Cell: EP-28B Electrothrust 2 -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"EP-28BElectrothrust2","family":"Tomcats","role":"EWO","gen":"4","tier":"5","surv":3,"cost":29,"a2a":3,"a2g":2,"manu":2,"speed":5,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16522,7 +16858,7 @@
                 🔴4-5
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -16605,7 +16941,7 @@
 
     
     <!-- Cell: ST-21 Quickcat -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"ST-21Quickcat","family":"Tomcats","role":"INTERCEPTOR","gen":"4","tier":"5","surv":3,"cost":30,"a2a":4,"a2g":2,"manu":3,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16697,7 +17033,7 @@
 
     
     <!-- Cell: AST-21 Strikecat -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"AST-21Strikecat","family":"Tomcats","role":"STRIKE","gen":"4","tier":"5","surv":2,"cost":30,"a2a":2,"a2g":4,"manu":3,"speed":4,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16789,7 +17125,7 @@
 
     
     <!-- Cell: FT-XIV Skadi -->
-    <td class="pad10 plane Tomcats" id="">
+    <td class="pad10 plane" id="" data={"plane":"FT-XIVSkadi","family":"Tomcats","role":"MULTIROLE","gen":"4","tier":"6","surv":4,"cost":35,"a2a":4,"a2g":3,"manu":3,"speed":5,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16890,7 +17226,7 @@
             <!-- Row: Vanguards -->
         
     <!-- Cell: F-13B Vanguard -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-13BVanguard","family":"Vanguards","role":"STRIKE","gen":"3","tier":"1","surv":1,"cost":5,"a2a":1,"a2g":2,"manu":-1,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -16982,7 +17318,7 @@
 
     
     <!-- Cell: F-13C Vanguard -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-13CVanguard","family":"Vanguards","role":"MULTIROLE","gen":"3","tier":"2","surv":2,"cost":6,"a2a":1,"a2g":1,"manu":0,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17074,7 +17410,7 @@
 
     
     <!-- Cell: F-13D Elster -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-13DElster","family":"Vanguards","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":8,"a2a":2,"a2g":-1,"manu":-1,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17166,7 +17502,7 @@
 
     
     <!-- Cell: F-13A Vanguard -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-13AVanguard","family":"Vanguards","role":"INTERCEPTOR","gen":"2","tier":"5","surv":2,"cost":9,"a2a":3,"a2g":3,"manu":0,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17258,7 +17594,7 @@
 
     
     <!-- Cell: EF-13A Starling -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-13AStarling","family":"Vanguards","role":"EWO","gen":"3","tier":"4","surv":2,"cost":11,"a2a":0,"a2g":1,"manu":-1,"speed":3,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17267,7 +17603,7 @@
                 🟡3-4
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -17350,7 +17686,7 @@
 
     
     <!-- Cell: F-13E Arthurguard -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-13EArthurguard","family":"Vanguards","role":"STRIKE","gen":"4","tier":"1","surv":2,"cost":11,"a2a":-1,"a2g":2,"manu":-1,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17442,7 +17778,7 @@
 
     
     <!-- Cell: EF-13G Super Starling -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-13GSuperStarling","family":"Vanguards","role":"EWO","gen":"4","tier":"3","surv":2,"cost":17,"a2a":0,"a2g":0,"manu":0,"speed":2,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17451,7 +17787,7 @@
                 🔴4-3
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -17534,7 +17870,7 @@
 
     
     <!-- Cell: F-13M Super Vanguard -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-13MSuperVanguard","family":"Vanguards","role":"MULTIROLE","gen":"4","tier":"2","surv":3,"cost":18,"a2a":3,"a2g":1,"manu":0,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17626,7 +17962,7 @@
 
     
     <!-- Cell: F-13G Super Vanguard -->
-    <td class="pad10 plane Vanguards" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-13GSuperVanguard","family":"Vanguards","role":"MULTIROLE","gen":"4","tier":"2","surv":3,"cost":18,"a2a":1,"a2g":3,"manu":1,"speed":2,"cap":11}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17727,7 +18063,7 @@
             <!-- Row: Varks -->
         
     <!-- Cell: F-111D Advancedvark -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-111DAdvancedvark","family":"Varks","role":"STRIKE","gen":"4","tier":"0","surv":3,"cost":9,"a2a":0,"a2g":3,"manu":-1,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17819,7 +18155,7 @@
 
     
     <!-- Cell: EF-111A Spyeater -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-111ASpyeater","family":"Varks","role":"EWO","gen":"3","tier":"4","surv":2,"cost":13,"a2a":1,"a2g":2,"manu":0,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17828,7 +18164,7 @@
                 🟡3-4
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -17911,7 +18247,7 @@
 
     
     <!-- Cell: EF-111F Raven -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-111FRaven","family":"Varks","role":"EWO","gen":"4","tier":"1","surv":5,"cost":13,"a2a":0,"a2g":1,"manu":0,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -17920,7 +18256,7 @@
                 🔴4-1
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -18003,7 +18339,7 @@
 
     
     <!-- Cell: F-111C+ Southvark+ -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-111C+Southvark+","family":"Varks","role":"MULTIROLE","gen":"4","tier":"1","surv":4,"cost":14,"a2a":2,"a2g":2,"manu":-1,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18095,7 +18431,7 @@
 
     
     <!-- Cell: F-111B Seavark -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-111BSeavark","family":"Varks","role":"INTERCEPTOR","gen":"3","tier":"5","surv":2,"cost":18,"a2a":3,"a2g":0,"manu":1,"speed":4,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18187,7 +18523,7 @@
 
     
     <!-- Cell: F-111C Southvark -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-111CSouthvark","family":"Varks","role":"MULTIROLE","gen":"3","tier":"5","surv":4,"cost":18,"a2a":2,"a2g":2,"manu":1,"speed":4,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18279,7 +18615,7 @@
 
     
     <!-- Cell: F-111F Supervark -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-111FSupervark","family":"Varks","role":"STRIKE","gen":"4","tier":"2","surv":5,"cost":18,"a2a":1,"a2g":3,"manu":-1,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18371,7 +18707,7 @@
 
     
     <!-- Cell: F-111A Aardvark -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-111AAardvark","family":"Varks","role":"STRIKE","gen":"3","tier":"5","surv":3,"cost":19,"a2a":0,"a2g":3,"manu":0,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18463,7 +18799,7 @@
 
     
     <!-- Cell: RF-111C Southspy -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"RF-111CSouthspy","family":"Varks","role":"EWO","gen":"3","tier":"5","surv":3,"cost":20,"a2a":3,"a2g":3,"manu":1,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18472,7 +18808,7 @@
                 🟡3-5
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -18555,7 +18891,7 @@
 
     
     <!-- Cell: F-111G Skypig -->
-    <td class="pad10 plane Varks" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-111GSkypig","family":"Varks","role":"STRIKE","gen":"4","tier":"3","surv":5,"cost":23,"a2a":2,"a2g":4,"manu":1,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18656,7 +18992,7 @@
             <!-- Row: Vespers -->
         
     <!-- Cell: F-18L Light Hornet -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-18LLightHornet","family":"Vespers","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":6,"a2a":0,"a2g":0,"manu":2,"speed":-1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18748,7 +19084,7 @@
 
     
     <!-- Cell: F/A-18A Hornet -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F/A-18AHornet","family":"Vespers","role":"MULTIROLE","gen":"4","tier":"1","surv":1,"cost":11,"a2a":1,"a2g":0,"manu":2,"speed":1,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18840,7 +19176,7 @@
 
     
     <!-- Cell: F-18C Viking Vesper -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-18CVikingVesper","family":"Vespers","role":"INTERCEPTOR","gen":"4","tier":"2","surv":1,"cost":15,"a2a":2,"a2g":-1,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -18932,7 +19268,7 @@
 
     
     <!-- Cell: F/A-18C Hornet -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F/A-18CHornet","family":"Vespers","role":"MULTIROLE","gen":"4","tier":"2","surv":2,"cost":17,"a2a":1,"a2g":1,"manu":2,"speed":2,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19024,7 +19360,7 @@
 
     
     <!-- Cell: CF-188A Northern Hornet -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"CF-188ANorthernHornet","family":"Vespers","role":"MULTIROLE","gen":"4","tier":"3","surv":3,"cost":20,"a2a":2,"a2g":1,"manu":2,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19116,7 +19452,7 @@
 
     
     <!-- Cell: F/A-18X HARV -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F/A-18XHARV","family":"Vespers","role":"MULTIROLE","gen":"4","tier":"4","surv":1,"cost":25,"a2a":3,"a2g":2,"manu":4,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19208,7 +19544,7 @@
 
     
     <!-- Cell: CF-188B HEP Super Wasp -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"CF-188BHEPSuperWasp","family":"Vespers","role":"MULTIROLE","gen":"4","tier":"4","surv":3,"cost":27,"a2a":2,"a2g":3,"manu":3,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19300,7 +19636,7 @@
 
     
     <!-- Cell: EA-18G Growler -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"EA-18GGrowler","family":"Vespers","role":"EWO","gen":"4","tier":"5","surv":3,"cost":29,"a2a":3,"a2g":3,"manu":3,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19309,7 +19645,7 @@
                 🔴4-5
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -19392,7 +19728,7 @@
 
     
     <!-- Cell: F/A-18E Super Hornet -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F/A-18ESuperHornet","family":"Vespers","role":"MULTIROLE","gen":"4","tier":"5","surv":3,"cost":31,"a2a":3,"a2g":3,"manu":4,"speed":3,"cap":14}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19484,7 +19820,7 @@
 
     
     <!-- Cell: F/A-18AF Advanced Super Hornet -->
-    <td class="pad10 plane Vespers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F/A-18AFAdvancedSuperHornet","family":"Vespers","role":"MULTIROLE","gen":"4","tier":"6","surv":3,"cost":36,"a2a":3,"a2g":4,"manu":4,"speed":3,"cap":16}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19585,7 +19921,7 @@
             <!-- Row: Vipers -->
         
     <!-- Cell: F-16ADF Sky Viper -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-16ADFSkyViper","family":"Vipers","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":5,"a2a":1,"a2g":-1,"manu":1,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19677,7 +20013,7 @@
 
     
     <!-- Cell: F-16A Viper B10 -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-16AViperB10","family":"Vipers","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":6,"a2a":0,"a2g":0,"manu":1,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19769,7 +20105,7 @@
 
     
     <!-- Cell: F-16B Viper B20 -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-16BViperB20","family":"Vipers","role":"MULTIROLE","gen":"4","tier":"1","surv":2,"cost":9,"a2a":0,"a2g":0,"manu":2,"speed":2,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19861,7 +20197,7 @@
 
     
     <!-- Cell: EF-16G Shockviper -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-16GShockviper","family":"Vipers","role":"EWO","gen":"4","tier":"2","surv":1,"cost":13,"a2a":1,"a2g":1,"manu":1,"speed":1,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -19870,7 +20206,7 @@
                 🔴4-2
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -19953,7 +20289,7 @@
 
     
     <!-- Cell: A-16 Rattlesnake -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"A-16Rattlesnake","family":"Vipers","role":"STRIKE","gen":"4","tier":"3","surv":1,"cost":18,"a2a":1,"a2g":3,"manu":3,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20045,7 +20381,7 @@
 
     
     <!-- Cell: F-16C Viper B52 -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-16CViperB52","family":"Vipers","role":"MULTIROLE","gen":"4","tier":"4","surv":2,"cost":25,"a2a":3,"a2g":3,"manu":3,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20137,7 +20473,7 @@
 
     
     <!-- Cell: F-2A Viper Zero -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-2AViperZero","family":"Vipers","role":"MULTIROLE","gen":"4","tier":"4","surv":3,"cost":25,"a2a":3,"a2g":4,"manu":3,"speed":3,"cap":11}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20229,7 +20565,7 @@
 
     
     <!-- Cell: F-16F Viper B72 -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-16FViperB72","family":"Vipers","role":"MULTIROLE","gen":"4","tier":"4","surv":3,"cost":27,"a2a":3,"a2g":3,"manu":3,"speed":3,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20321,7 +20657,7 @@
 
     
     <!-- Cell: F-16N Pit Viper -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-16NPitViper","family":"Vipers","role":"INTERCEPTOR","gen":"4","tier":"5","surv":1,"cost":27,"a2a":4,"a2g":3,"manu":4,"speed":5,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20413,7 +20749,7 @@
 
     
     <!-- Cell: F-62A VISTA -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-62AVISTA","family":"Vipers","role":"MULTIROLE","gen":"4","tier":"5","surv":1,"cost":28,"a2a":4,"a2g":3,"manu":4,"speed":3,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20505,7 +20841,7 @@
 
     
     <!-- Cell: F-16XL Strike Falcon -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-16XLStrikeFalcon","family":"Vipers","role":"STRIKE","gen":"4","tier":"5","surv":3,"cost":30,"a2a":3,"a2g":4,"manu":3,"speed":3,"cap":14}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20597,7 +20933,7 @@
 
     
     <!-- Cell: F-2C+ Viper Zero Super Kai -->
-    <td class="pad10 plane Vipers" id="">
+    <td class="pad10 plane" id="" data={"plane":"F-2C+ViperZeroSuperKai","family":"Vipers","role":"MULTIROLE","gen":"4","tier":"6","surv":3,"cost":33,"a2a":3,"a2g":4,"manu":5,"speed":4,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20698,7 +21034,7 @@
             <!-- Row: Windstorms -->
         
     <!-- Cell: Tornado ADV -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"TornadoADV","family":"Windstorms","role":"INTERCEPTOR","gen":"4","tier":"0","surv":1,"cost":5,"a2a":1,"a2g":0,"manu":0,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20791,7 +21127,7 @@
 
     
     <!-- Cell: Tornado ECR -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"TornadoECR","family":"Windstorms","role":"EWO","gen":"4","tier":"0","surv":1,"cost":5,"a2a":-1,"a2g":-1,"manu":-1,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20800,7 +21136,7 @@
                 🔴4-0
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -20884,7 +21220,7 @@
 
     
     <!-- Cell: Tornado IDS GR4 -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"TornadoIDSGR4","family":"Windstorms","role":"STRIKE","gen":"4","tier":"0","surv":1,"cost":7,"a2a":0,"a2g":1,"manu":0,"speed":1,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -20977,7 +21313,7 @@
 
     
     <!-- Cell: EF-2000 Typhoon T1 -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-2000TyphoonT1","family":"Windstorms","role":"INTERCEPTOR","gen":"4","tier":"1","surv":0,"cost":9,"a2a":2,"a2g":-1,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21069,7 +21405,7 @@
 
     
     <!-- Cell: Rafale A -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"RafaleA","family":"Windstorms","role":"MULTIROLE","gen":"4","tier":"1","surv":0,"cost":9,"a2a":1,"a2g":0,"manu":3,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21162,7 +21498,7 @@
 
     
     <!-- Cell: EF-2000 Typhoon T1B5 -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-2000TyphoonT1B5","family":"Windstorms","role":"MULTIROLE","gen":"4","tier":"1","surv":1,"cost":10,"a2a":0,"a2g":1,"manu":2,"speed":2,"cap":8}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21254,7 +21590,7 @@
 
     
     <!-- Cell: EF-2000 Typhoon T2 -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-2000TyphoonT2","family":"Windstorms","role":"MULTIROLE","gen":"4","tier":"2","surv":2,"cost":14,"a2a":1,"a2g":2,"manu":2,"speed":3,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21346,7 +21682,7 @@
 
     
     <!-- Cell: Rafale C -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"RafaleC","family":"Windstorms","role":"MULTIROLE","gen":"4","tier":"2","surv":2,"cost":15,"a2a":2,"a2g":1,"manu":4,"speed":2,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21439,7 +21775,7 @@
 
     
     <!-- Cell: EF-2000 Typhoon T3 -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-2000TyphoonT3","family":"Windstorms","role":"MULTIROLE","gen":"4","tier":"3","surv":3,"cost":20,"a2a":1,"a2g":2,"manu":3,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21531,7 +21867,7 @@
 
     
     <!-- Cell: Rafale BMN -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"RafaleBMN","family":"Windstorms","role":"INTERCEPTOR","gen":"4","tier":"3","surv":2,"cost":20,"a2a":3,"a2g":0,"manu":4,"speed":2,"cap":9}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21624,7 +21960,7 @@
 
     
     <!-- Cell: Rafale R -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"RafaleR","family":"Windstorms","role":"EWO","gen":"4","tier":"3","surv":1,"cost":20,"a2a":2,"a2g":2,"manu":3,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21633,7 +21969,7 @@
                 🔴4-3
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -21717,7 +22053,7 @@
 
     
     <!-- Cell: EK-2000 Thunderstorm -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"EK-2000Thunderstorm","family":"Windstorms","role":"EWO","gen":"4","tier":"4","surv":3,"cost":23,"a2a":2,"a2g":2,"manu":2,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21726,7 +22062,7 @@
                 🔴4-4
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -21809,7 +22145,7 @@
 
     
     <!-- Cell: EF-2000 Typhoon T4 -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"EF-2000TyphoonT4","family":"Windstorms","role":"MULTIROLE","gen":"4","tier":"4","surv":3,"cost":26,"a2a":4,"a2g":3,"manu":3,"speed":4,"cap":12}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -21901,7 +22237,7 @@
 
     
     <!-- Cell: Rafale M -->
-    <td class="pad10 plane Windstorms" id="">
+    <td class="pad10 plane" id="" data={"plane":"RafaleM","family":"Windstorms","role":"MULTIROLE","gen":"4","tier":"4","surv":3,"cost":26,"a2a":3,"a2g":4,"manu":4,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22003,7 +22339,7 @@
             <!-- Row: Wolfpacks -->
         
     <!-- Cell: MiG-23BN Shepard -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-23BNShepard","family":"Wolfpacks","role":"STRIKE","gen":"3","tier":"1","surv":2,"cost":5,"a2a":0,"a2g":2,"manu":1,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22095,7 +22431,7 @@
 
     
     <!-- Cell: MiG-23ML Zerdava -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-23MLZerdava","family":"Wolfpacks","role":"MULTIROLE","gen":"3","tier":"2","surv":1,"cost":6,"a2a":1,"a2g":1,"manu":2,"speed":3,"cap":6}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22187,7 +22523,7 @@
 
     
     <!-- Cell: MiG-27K Bloodhound -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-27KBloodhound","family":"Wolfpacks","role":"STRIKE","gen":"3","tier":"2","surv":2,"cost":6,"a2a":0,"a2g":3,"manu":2,"speed":3,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22279,7 +22615,7 @@
 
     
     <!-- Cell: MiG-23MLD Beardog -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-23MLDBeardog","family":"Wolfpacks","role":"MULTIROLE","gen":"4","tier":"0","surv":1,"cost":6,"a2a":0,"a2g":0,"manu":1,"speed":2,"cap":5}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22371,7 +22707,7 @@
 
     
     <!-- Cell: Su-24M Samoyed -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-24MSamoyed","family":"Wolfpacks","role":"STRIKE","gen":"4","tier":"2","surv":2,"cost":13,"a2a":0,"a2g":1,"manu":1,"speed":1,"cap":7}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22463,7 +22799,7 @@
 
     
     <!-- Cell: Su-24MP Electric Fence -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-24MPElectricFence","family":"Wolfpacks","role":"EWO","gen":"4","tier":"2","surv":2,"cost":14,"a2a":0,"a2g":0,"manu":2,"speed":0,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22472,7 +22808,7 @@
                 🔴4-2
             </td>
             <td class="text16 tooltip tcenter">
-                <span class="tooltiptext"><strong>ROLE</strong> - Electronic Warfare: Support specialist, jamming enemies and assisting allies.</span>
+                <span class="tooltiptext"><strong>ROLE</strong> - EWO: Electronic Warfare Support specialist, jamming enemies and assisting allies.</span>
                 EWO
             </td>
             <td class="text16 tooltip tcenter">
@@ -22555,7 +22891,7 @@
 
     
     <!-- Cell: MiG-23-98-2 Wolfdog -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"MiG-23-98-2Wolfdog","family":"Wolfpacks","role":"MULTIROLE","gen":"4","tier":"2","surv":1,"cost":16,"a2a":3,"a2g":1,"manu":2,"speed":3,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>
@@ -22647,7 +22983,7 @@
 
     
     <!-- Cell: Su-24M2 Super Samoyed -->
-    <td class="pad10 plane Wolfpacks" id="">
+    <td class="pad10 plane" id="" data={"plane":"Su-24M2SuperSamoyed","family":"Wolfpacks","role":"STRIKE","gen":"4","tier":"3","surv":2,"cost":19,"a2a":0,"a2g":2,"manu":2,"speed":2,"cap":10}>
         <table class="overcell">
         <tbody>
         <tr>

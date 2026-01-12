@@ -76,7 +76,7 @@ h3 {
 
 hr {
 	height: 1px;
-	background-color: #d8d8d8;
+	background-color: #222;
 	border: none;
 	width: 100%;
 	margin: 0px;
@@ -265,6 +265,11 @@ aside,
 	padding: 0px;
 }
 
+td {
+	padding: 5px;
+	text-align:center;
+}
+
 /* V-Align */
 .vtop {
 	vertical-align: top;
@@ -291,8 +296,8 @@ aside,
 }
 
 .active{
-	background-color: #666;
-	color: white;
+	background-color: #777;
+	color: #000;
 }
 
 .family {
@@ -301,4 +306,27 @@ aside,
 
 select, option{
 	font-size: 16px;
+	color: white;
+	background: #222;
+	border: 2px solid #dddddd;
+	padding: 10px;
+	/* transition: 0.4s; */
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+button {
+	font-size: 16px;
+	color: white;
+	background: #222;
+	border: 2px solid #dddddd;
+	padding: 10px;
+}
+
+button:hover{
+	cursor: pointer;
 }
