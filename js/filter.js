@@ -66,124 +66,26 @@ function listen() {
     resetFilters(true);
   })
 
-  // for (let i = 0; i <= fields.slice(0, 8).length; i++) {
-  //   setNumericListeners(fields[i]);
-  // }
-  
-  // this is too verbose for my liking but "works". it's fine.
-  min_gen = document.getElementById("min-gen");
-  max_gen = document.getElementById("max-gen");
-  min_gen.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("gen", "num","", min_gen.options[min_gen.selectedIndex].text, max_gen.options[max_gen.selectedIndex].text), false;
-  })
-  max_gen.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("gen", "num","", min_gen.options[min_gen.selectedIndex].text, max_gen.options[max_gen.selectedIndex].text), false;
-  })
-
-  min_tier = document.getElementById("min-tier");
-  max_tier = document.getElementById("max-tier");
-  min_tier.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("tier", "num","", min_tier.options[min_tier.selectedIndex].text, max_tier.options[max_tier.selectedIndex].text), false;
-  })
-  max_tier.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("tier", "num","", min_tier.options[min_tier.selectedIndex].text, max_tier.options[max_tier.selectedIndex].text), false;
-  })
-
-  min_surv = document.getElementById("min-surv");
-  max_surv = document.getElementById("max-surv");
-  min_surv.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("surv", "num","", min_surv.options[min_surv.selectedIndex].text, max_surv.options[max_surv.selectedIndex].text), false;
-  })
-  max_surv.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("surv", "num","", min_surv.options[min_surv.selectedIndex].text, max_surv.options[max_surv.selectedIndex].text), false;
-  })
-  
-  min_cost = document.getElementById("min-cost");
-  max_cost = document.getElementById("max-cost");
-  min_cost.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("cost", "num","", min_cost.options[min_cost.selectedIndex].text, max_cost.options[max_cost.selectedIndex].text), false;
-  })
-  max_cost.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("cost", "num","", min_cost.options[min_cost.selectedIndex].text, max_cost.options[max_cost.selectedIndex].text), false;
-  })
-
-  min_a2a = document.getElementById("min-a2a");
-  max_a2a = document.getElementById("max-a2a");
-  min_a2a.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("a2a", "num","", min_a2a.options[min_a2a.selectedIndex].text, max_a2a.options[max_a2a.selectedIndex].text), false;
-  })
-  max_a2a.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("a2a", "num","", min_a2a.options[min_a2a.selectedIndex].text, max_a2a.options[max_a2a.selectedIndex].text), false;
-  })
-
-  min_a2g = document.getElementById("min-a2g");
-  max_a2g = document.getElementById("max-a2g");
-  min_a2g.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("a2g", "num","", min_a2g.options[min_a2g.selectedIndex].text, max_a2g.options[max_a2g.selectedIndex].text), false;
-  })
-  max_a2g.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("a2g", "num","", min_a2g.options[min_a2g.selectedIndex].text, max_a2g.options[max_a2g.selectedIndex].text), false;
-  })
-
-  min_manu = document.getElementById("min-manu");
-  max_manu = document.getElementById("max-manu");
-  min_manu.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("manu", "num","", min_manu.options[min_manu.selectedIndex].text, max_manu.options[max_manu.selectedIndex].text), false;
-  })
-  max_manu.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("manu", "num","", min_manu.options[min_manu.selectedIndex].text, max_manu.options[max_manu.selectedIndex].text), false;
-  })
-
-  min_speed = document.getElementById("min-speed");
-  max_speed = document.getElementById("max-speed");
-  min_speed.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("speed", "num","", min_speed.options[min_speed.selectedIndex].text, max_speed.options[max_speed.selectedIndex].text), false;
-  })
-  max_speed.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("speed", "num","", min_speed.options[min_speed.selectedIndex].text, max_speed.options[max_speed.selectedIndex].text), false;
-  })
-
-  min_cap = document.getElementById("min-cap");
-  max_cap = document.getElementById("max-cap");
-  min_cap.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("cap", "num","", min_cap.options[min_cap.selectedIndex].text, max_cap.options[max_cap.selectedIndex].text), false;
-  })
-  max_cap.addEventListener("change", function (e){
-    e.preventDefault();
-    setFilter("cap", "num","", min_cap.options[min_cap.selectedIndex].text, max_cap.options[max_cap.selectedIndex].text), false;
-  })
+  for (let i = 0; i <= fields.slice(0, 8).length; i++) {
+    console.log('setting up field '+fields[i])
+    setNumericListeners(fields[i]);
+  }
 }
 
 // this is the smart way. which breaks and I'm nto fixing it yet
-// function setNumericListeners(field) {
-//   minimum = document.getElementById(`min-${field}`)
-//   maximum = document.getElementById(`max-${field}`)
+function setNumericListeners(field) {
+  var minimum = document.getElementById(`min-${field}`)
+  var maximum = document.getElementById(`max-${field}`)
+  console.log("found fields for"+maximum, minimum)
 
-//   minimum.addEventListener("change", function (e){
-//     setFilter(field, "num","", minimum.options[minimum.selectedIndex].text, maximum.options[maximum.selectedIndex].text), false;
-//   })
+  minimum.addEventListener("change", function (e){
+    setFilter(field, "num","", minimum.options[minimum.selectedIndex].text, maximum.options[maximum.selectedIndex].text), false;
+  })
 
-//   maximum.addEventListener("change", function (e){
-//     setFilter(field, "num","", minimum.options[minimum.selectedIndex].text, maximum.options[maximum.selectedIndex].text), false;
-//   })
-// }
+  maximum.addEventListener("change", function (e){
+    setFilter(field, "num","", minimum.options[minimum.selectedIndex].text, maximum.options[maximum.selectedIndex].text), false;
+  })
+}
 
 function resetFilters(reload){
   // fuck it. just reload. I'm not dealing with moving all the elements back around, in the right order. who gives a shit,
@@ -235,19 +137,8 @@ function revealPlanes(planesShow, planesHide) {
   }
 }
 
-function revealFamilies(familyShow, familyHide) {
-  // console.log(`showing ${familyShow.length} fams, hiding ${familyHide.length} fams`)
-  for (let i=0;i<familyShow.length;i++) {
-    if(!familyShow[i].classList.contains("show")){w3AddClass(familyShow[i], "show");console.log(`added show to ${familyShow[i].classList}`);}
-  }
-  for (let i=0;i<familyHide.length;i++) {
-    if(familyHide[i].classList.contains("show")){w3RemoveClass(familyHide[i], "show");console.log(`added hide to ${familyHide[i].classList}`);}
-  }
-}
-
 function filterPlanes(filterSet) {
   // console.log(`filter set:${JSON.stringify(filterSet)}`)
-  var filter_count = 0;
   var planesShow = [];
   var planesHide = [];
   var familyShow = [];
@@ -282,21 +173,6 @@ function filterPlanes(filterSet) {
           var currentPlaneValue = planeData[currentField];
           var planeFamily = planeData.family;
           var planeFamilyElement = document.getElementsByClassName(planeFamily)[0];
-
-          // if(currentFilter.field == "family"){
-          //   filteringFamily = true;
-          //   currentFamily = currentFilter.text;
-          // }
-
-          // if(filteringFamily){
-          //   if(currentFamily != currentFilter.text){
-          //     if (!familyHide.includes(planeFamilyElement)){
-          //       familyHide.push(planeFamilyElement);
-          //       console.log(`FF: hide ${planeFamily} due to ${currentFilter.field}`)
-          //     }
-          //     continue;
-          //   }
-          // }
 
           if (currentFilter.type == "num"){
             if (Number(currentFilter.min) <= Number(currentPlaneValue) && Number(currentPlaneValue) <= Number(currentFilter.max)){
@@ -334,8 +210,6 @@ function filterPlanes(filterSet) {
           // console.log(`Disqualified plane. Not showing:${planeData.plane}`)
         }
       }
-      // console.log(`Filter report - ${filter_count} contacts using filter ${currentFilter.field}`)
-      filter_count = 0;
     }
     // console.log("Reveal list filled.");
   }
