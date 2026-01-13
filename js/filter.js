@@ -6,6 +6,10 @@ window.onload = init;
 
 var fields = ["gen","tier","surv","cost","a2a","a2g","manu","speed","cap", "role","family"]
 
+var searchResults = "";
+var searchResultsHeader = "";
+var searchResultsSubheader = "";
+
 var filterSet = {};
 filterSet.family = {};
 filterSet.role = {};
@@ -24,8 +28,12 @@ var currentFamily = "";
 function init(){
   allPlanes = Array.from(document.querySelectorAll("td.plane"));
   allFamilies = Array.from(document.querySelectorAll("tr.family"));
+  searchResults = document.getElementById("results");
+  searchResultsHeader = document.getElementById("results-header");
+  searchResultsSubheader = document.getElementById("results-subheader");
+
   listen();
-  resetFilters();
+  resetFilters(false);
 
   // Add active class to the current control button (highlight it)
   var btnContainer = document.getElementById("filter-controls");
@@ -41,27 +49,25 @@ function init(){
 
 function listen() {
   fam = document.getElementById("family-filter");
-  // fam.style.visibility = 'hidden';
   fam.addEventListener("change", function (e){
     setFilter("family","txt",fam.options[fam.selectedIndex].text, 0, 0), false;
   })
 
   role = document.getElementById("role-filter");
-  // role.style.visibility = 'hidden';
   role.addEventListener("change", function (e){
     setFilter("role","txt",role.options[role.selectedIndex].text, 0, 0), false;
   })
 
   reset_button = document.getElementById("reset");
   reset_button.addEventListener("click", function (e){
-    resetFilters();
+    resetFilters(true);
   })
 
   // for (let i = 0; i <= fields.slice(0, 8).length; i++) {
   //   setNumericListeners(fields[i]);
   // }
   
-  // this is too verbose for my liking but "works"
+  // this is too verbose for my liking but "works". it's fine.
   min_gen = document.getElementById("min-gen");
   max_gen = document.getElementById("max-gen");
   min_gen.addEventListener("change", function (e){
@@ -158,16 +164,22 @@ function listen() {
 //   })
 // }
 
-function resetFilters(){
-  // console.log("Resetting Filters.")
+function resetFilters(reload){
+  // fuck it. just reload. I'm not dealing with moving all the elements back around, in the right order. who gives a shit,
+  if(reload){location.reload();}
+  
   filterSet = {};
   filteringFamily = false;
+  searchResults.style.display = "none"
+  searchResultsHeader.style.display = "none"
+  searchResultsSubheader.style.display = "none"
+  
   for (let i = 0; i < allPlanes.length; i++) {
     w3AddClass(allPlanes[i], "show");
   }
   for (let i = 0; i < allFamilies.length; i++){
     w3AddClass(allFamilies[i], "show");
-    console.log(`${allFamilies[i].classList}`)
+    // console.log(`${allFamilies[i].classList}`)
   }
   for (let i = 0; i <= fields.slice(0, 8).length; i++){
     document.getElementById(`min-${fields[i]}`).selectedIndex = 0;
@@ -195,6 +207,7 @@ function revealPlanes(planesShow, planesHide) {
   // console.log(`revealing ${planesShow.length} planes.`)
   for (let i=0;i<planesShow.length;i++) {
     if(!planesShow[i].classList.contains("show")){w3AddClass(planesShow[i], "show")};
+    searchResults.appendChild(planesShow[i]);
   }
   for (let i=0;i<planesHide.length;i++) {
     if(planesHide[i].classList.contains("show")){w3RemoveClass(planesHide[i], "show")};
@@ -202,7 +215,7 @@ function revealPlanes(planesShow, planesHide) {
 }
 
 function revealFamilies(familyShow, familyHide) {
-  console.log(`showing ${familyShow.length} fams, hiding ${familyHide.length} fams`)
+  // console.log(`showing ${familyShow.length} fams, hiding ${familyHide.length} fams`)
   for (let i=0;i<familyShow.length;i++) {
     if(!familyShow[i].classList.contains("show")){w3AddClass(familyShow[i], "show");console.log(`added show to ${familyShow[i].classList}`);}
   }
@@ -224,9 +237,9 @@ function filterPlanes(filterSet) {
   for (let i = 0; i < allPlanes.length; i++) {
     if(allPlanes[i].classList.contains("show")){w3RemoveClass(allPlanes[i], "show")};
   }
-  // for (let i = 0; i < allFamilies.length; i++) {
-  //   if(allFamilies[i].classList.contains("show")){w3RemoveClass(allFamilies[i], "show")};
-  // }
+  for (let i = 0; i < allFamilies.length; i++) {
+    if(allFamilies[i].classList.contains("show")){w3RemoveClass(allFamilies[i], "show")};
+  }
   // console.log("allPlanes removed:"+allPlanes.length);
 
   // identify targets
@@ -234,6 +247,9 @@ function filterPlanes(filterSet) {
     var currentField = fields[j];
     var currentFilter = filterSet[currentField];
     // console.log(`Field: ${currentField}; Filter:${currentFilter}`)
+    searchResults.style.display = 'block'
+    searchResultsHeader.style.display = 'block'
+    searchResultsSubheader.style.display = 'block'
     if (currentFilter != undefined){
 
       for (let i = 0; i < allPlanes.length; i++) {
@@ -305,6 +321,8 @@ function filterPlanes(filterSet) {
     // add show to the target classes
     // console.log(`showing families:${familyShow}. Hiding families:${familyHide}`)
   revealPlanes(planesShow, planesHide);
+
+  // keep hidden after filter start
   // revealFamilies(familyShow, familyHide);  
 }
 
