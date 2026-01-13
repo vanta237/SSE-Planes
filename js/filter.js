@@ -224,9 +224,9 @@ function filterPlanes(filterSet) {
   for (let i = 0; i < allPlanes.length; i++) {
     if(allPlanes[i].classList.contains("show")){w3RemoveClass(allPlanes[i], "show")};
   }
-  for (let i = 0; i < allFamilies.length; i++) {
-    if(allFamilies[i].classList.contains("show")){w3RemoveClass(allFamilies[i], "show")};
-  }
+  // for (let i = 0; i < allFamilies.length; i++) {
+  //   if(allFamilies[i].classList.contains("show")){w3RemoveClass(allFamilies[i], "show")};
+  // }
   // console.log("allPlanes removed:"+allPlanes.length);
 
   // identify targets
@@ -305,7 +305,7 @@ function filterPlanes(filterSet) {
     // add show to the target classes
     // console.log(`showing families:${familyShow}. Hiding families:${familyHide}`)
   revealPlanes(planesShow, planesHide);
-  revealFamilies(familyShow, familyHide);  
+  // revealFamilies(familyShow, familyHide);  
 }
 
 // https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
