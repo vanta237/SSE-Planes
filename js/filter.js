@@ -50,16 +50,19 @@ function init(){
 function listen() {
   fam = document.getElementById("family-filter");
   fam.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("family","txt",fam.options[fam.selectedIndex].text, 0, 0), false;
   })
 
   role = document.getElementById("role-filter");
   role.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("role","txt",role.options[role.selectedIndex].text, 0, 0), false;
   })
 
   reset_button = document.getElementById("reset");
   reset_button.addEventListener("click", function (e){
+    e.preventDefault();
     resetFilters(true);
   })
 
@@ -71,81 +74,99 @@ function listen() {
   min_gen = document.getElementById("min-gen");
   max_gen = document.getElementById("max-gen");
   min_gen.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("gen", "num","", min_gen.options[min_gen.selectedIndex].text, max_gen.options[max_gen.selectedIndex].text), false;
   })
   max_gen.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("gen", "num","", min_gen.options[min_gen.selectedIndex].text, max_gen.options[max_gen.selectedIndex].text), false;
   })
 
   min_tier = document.getElementById("min-tier");
   max_tier = document.getElementById("max-tier");
   min_tier.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("tier", "num","", min_tier.options[min_tier.selectedIndex].text, max_tier.options[max_tier.selectedIndex].text), false;
   })
   max_tier.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("tier", "num","", min_tier.options[min_tier.selectedIndex].text, max_tier.options[max_tier.selectedIndex].text), false;
   })
 
   min_surv = document.getElementById("min-surv");
   max_surv = document.getElementById("max-surv");
   min_surv.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("surv", "num","", min_surv.options[min_surv.selectedIndex].text, max_surv.options[max_surv.selectedIndex].text), false;
   })
   max_surv.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("surv", "num","", min_surv.options[min_surv.selectedIndex].text, max_surv.options[max_surv.selectedIndex].text), false;
   })
   
   min_cost = document.getElementById("min-cost");
   max_cost = document.getElementById("max-cost");
   min_cost.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("cost", "num","", min_cost.options[min_cost.selectedIndex].text, max_cost.options[max_cost.selectedIndex].text), false;
   })
   max_cost.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("cost", "num","", min_cost.options[min_cost.selectedIndex].text, max_cost.options[max_cost.selectedIndex].text), false;
   })
 
   min_a2a = document.getElementById("min-a2a");
   max_a2a = document.getElementById("max-a2a");
   min_a2a.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("a2a", "num","", min_a2a.options[min_a2a.selectedIndex].text, max_a2a.options[max_a2a.selectedIndex].text), false;
   })
   max_a2a.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("a2a", "num","", min_a2a.options[min_a2a.selectedIndex].text, max_a2a.options[max_a2a.selectedIndex].text), false;
   })
 
   min_a2g = document.getElementById("min-a2g");
   max_a2g = document.getElementById("max-a2g");
   min_a2g.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("a2g", "num","", min_a2g.options[min_a2g.selectedIndex].text, max_a2g.options[max_a2g.selectedIndex].text), false;
   })
   max_a2g.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("a2g", "num","", min_a2g.options[min_a2g.selectedIndex].text, max_a2g.options[max_a2g.selectedIndex].text), false;
   })
 
   min_manu = document.getElementById("min-manu");
   max_manu = document.getElementById("max-manu");
   min_manu.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("manu", "num","", min_manu.options[min_manu.selectedIndex].text, max_manu.options[max_manu.selectedIndex].text), false;
   })
   max_manu.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("manu", "num","", min_manu.options[min_manu.selectedIndex].text, max_manu.options[max_manu.selectedIndex].text), false;
   })
 
   min_speed = document.getElementById("min-speed");
   max_speed = document.getElementById("max-speed");
   min_speed.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("speed", "num","", min_speed.options[min_speed.selectedIndex].text, max_speed.options[max_speed.selectedIndex].text), false;
   })
   max_speed.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("speed", "num","", min_speed.options[min_speed.selectedIndex].text, max_speed.options[max_speed.selectedIndex].text), false;
   })
 
   min_cap = document.getElementById("min-cap");
   max_cap = document.getElementById("max-cap");
   min_cap.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("cap", "num","", min_cap.options[min_cap.selectedIndex].text, max_cap.options[max_cap.selectedIndex].text), false;
   })
   max_cap.addEventListener("change", function (e){
+    e.preventDefault();
     setFilter("cap", "num","", min_cap.options[min_cap.selectedIndex].text, max_cap.options[max_cap.selectedIndex].text), false;
   })
 }

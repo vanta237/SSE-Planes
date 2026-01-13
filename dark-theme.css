@@ -179,6 +179,10 @@ aside,
 	z-index: 1; /* Ensure tooltip is displayed above content */
 }
 
+.planett-show {
+	visibility: visible;
+}
+
 /* Show the tooltip text on hover */
 .tooltip:hover .tooltiptext {
   visibility: visible;
