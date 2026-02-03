@@ -63,9 +63,9 @@ h1 {
 
 h2 {
 	color: white;
-	font-size: 20px;
-	line-height: 25px;
-	padding-top: 10px;
+	font-size: 30px;
+	line-height: 20px;
+	padding-top: 5px;
 }
 
 h3 {
@@ -85,11 +85,11 @@ hr {
 }
 
 a[href] {
-	color: #1e8ad6;
+	color: white;
 }
 
 a[href]:hover {
-	color: #3ba0e6;
+	color: #aaa;
 }
 
 img {
